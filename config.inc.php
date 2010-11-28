@@ -1,5 +1,6 @@
 <?php
 $LOGPATH = '/var/log/eggdrop/';
+$LOGFILELIST = array('devsum.log','devsum.log.yesterday');
 $BACKGROUNDCOLOR = "#333";
 $USERMESSAGECOLOR = "#fff";
 $CHANNELCOLOR = "red";
