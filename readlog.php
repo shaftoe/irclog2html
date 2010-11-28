@@ -11,23 +11,15 @@ if ( $_GET['logfile'] == '' ) {
 }
 else {
     $MYLOGFILE = $LOGPATH . $LOGFILELIST[$_GET['logfile']];
-    print $MYLOGFILE;
 
     // a bit of sanity check on input
-    if ( strpos( $MYLOGFILE, '..' ) ) {
-        print "<p style=\"color:$USERMESSAGECOLOR\">No hacking please... bye</p>";
-        print $htmltail;
-        exit(1);
-    }    
-    elseif ( ! $logfile = @fopen($MYLOGFILE, "r") ) {
+    if ( ! $logfile = @fopen($MYLOGFILE, "r") ) {
         echo "<p style=\"color:$USERMESSAGECOLOR\">No such file</p>";
         print $htmltail;
         exit(1);
     }
-    
 
     if ($logfile) {
-
         while (($buffer = fgets($logfile)) !== false) {
             $logline = htmlspecialchars($buffer); # parse text to html
             $timestamp = "<span style=\"color:$TIMESTAMPCOLOR\">" . substr( $logline, 0, 7 ) . "</span>&nbsp;";
