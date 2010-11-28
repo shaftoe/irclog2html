@@ -3,6 +3,8 @@ require_once "config.inc.php";
 
 print $htmlheader;
 
+print "<h2><a href=\"index.php\">Back</a></h2>";
+
 // a bit of sanity check on input
 if ( $_GET['logfile'] == '' ) {
     echo "<p>No logfile selected. Nothing to display</p>";
