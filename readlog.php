@@ -10,7 +10,8 @@ if ( $_GET['logfile'] == '' ) {
     echo "<p>No logfile selected. Nothing to display</p>";
 }
 else {
-    $MYLOGFILE = $LOGPATH . $_GET['logfile'];
+    $MYLOGFILE = $LOGPATH . $LOGFILELIST[$_GET['logfile']];
+    print $MYLOGFILE;
 
     // a bit of sanity check on input
     if ( strpos( $MYLOGFILE, '..' ) ) {
