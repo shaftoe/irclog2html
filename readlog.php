@@ -6,7 +6,6 @@ print $htmlheader;
 // a bit of sanity check on input
 if ( $_GET['logfile'] == '' ) {
     echo "<p>No logfile selected. Nothing to display</p>";
-    exit(1);
 }
 else {
     $MYLOGFILE = $LOGPATH . $_GET['logfile'];
