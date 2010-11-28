@@ -5,13 +5,25 @@ print $htmlheader;
 
 print "<h2><a style=\"color:yellow\" href=\"index.php\">Back</a></h2>";
 
-// a bit of sanity check on input
+// a bit of sanity check on input 
 if ( $_GET['logfile'] == '' ) {
     echo "<p>No logfile selected. Nothing to display</p>";
 }
 else {
     $MYLOGFILE = $LOGPATH . $_GET['logfile'];
-    $logfile = @fopen($MYLOGFILE, "r");
+
+    // a bit of sanity check on input
+    if ( strpos( $MYLOGFILE, '..' ) ) {
+        print "<p>No hacking please... bye</p>";
+        print $htmltail;
+        exit(0);
+    }    
+    elseif ( ! $logfile = @fopen($MYLOGFILE, "r") ) {
+        echo "<p style=\"color:$USERMESSAGECOLOR\">No such file</p>";
+        print $htmltail;
+        exit(1);
+    }
+    
 
     if ($logfile) {
 
