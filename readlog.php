@@ -14,9 +14,9 @@ else {
 
     // a bit of sanity check on input
     if ( strpos( $MYLOGFILE, '..' ) ) {
-        print "<p>No hacking please... bye</p>";
+        print "<p style=\"color:$USERMESSAGECOLOR\">No hacking please... bye</p>";
         print $htmltail;
-        exit(0);
+        exit(1);
     }    
     elseif ( ! $logfile = @fopen($MYLOGFILE, "r") ) {
         echo "<p style=\"color:$USERMESSAGECOLOR\">No such file</p>";
