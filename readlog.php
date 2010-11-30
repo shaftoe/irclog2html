@@ -14,7 +14,7 @@ else {
 
     // a bit of sanity check on input
     if ( ! $logfile = @fopen($MYLOGFILE, "r") ) {
-        echo "<p style=\"color:$USERMESSAGECOLOR\">No such file</p>";
+        echo "<p style=\"color:" . $USERMESSAGECOLOR . "\">No such file</p>";
         print $htmltail;
         exit(1);
     }
