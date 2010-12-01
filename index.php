@@ -5,7 +5,7 @@ print $htmlheader;
 
 $count = 0;
 foreach ($LOGFILELIST as $i) {
-    print "<a style=\"color:yellow\" href=\"readlog.php?logfile=" . $count . "\">" . $i . "</a><br/>";
+    print "<p><a style=\"color:yellow\" href=\"readlog.php?logfile=" . $count . "\">" . $i . "</a></p>";
     $count += 1;
 }
 
